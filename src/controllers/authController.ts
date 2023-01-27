@@ -61,12 +61,12 @@ export default class AuthController {
       .catch(err => next(err));
   }
 
-  static async verifyIdToken(req: Request, res: Response, next: NextFunction) {
-    AuthService.verifyIdToken(req)
-      .then(decodeValue => {
-        req.body.user = decodeValue;
-        return next();
-      })
-      .catch(err => next(err));
-  }
+  // static async verifyIdToken(req: Request, res: Response, next: NextFunction) {
+  //   AuthService.verifyIdToken(req)
+  //     .then(decodeValue => {
+  //       req.body.user = decodeValue;
+  //       return next();
+  //     })
+  //     .catch(err => next(err));
+  // }
 }

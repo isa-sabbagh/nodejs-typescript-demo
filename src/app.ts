@@ -25,8 +25,8 @@ export class App {
     this.app.use(errorHandler);
 
     this.app.listen(PORT, () => {
-      // console.log('listening on port ' + PORT);
-      Logger.debug(`Server is up and running @ http://localhost:${PORT}`);
+      console.log('listening on port ' + PORT);
+      // Logger.debug(`Server is up and running @ http://localhost:${PORT}`);
     });
   }
 
