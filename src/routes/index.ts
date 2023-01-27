@@ -3,15 +3,17 @@ import { Application } from 'express';
 import HomeRoutes from './home';
 import AuthRoutes from './auth';
 import AppointmentsRoutes from './appointments';
-import NotificationsRoutes from './notification';
+// import NotificationsRoutes from './notification';
 import AppError from '../errors';
 import { errorHandler } from '../middlewares/handle-error';
+import PostRoutes from './post';
 
 export default class Routes {
   public homeRoutes = new HomeRoutes();
   public appointmentsRoutes = new AppointmentsRoutes();
   public authRoutes = new AuthRoutes();
-  public notificationRoutes = new NotificationsRoutes();
+  public postRoutes = new PostRoutes();
+  // public notificationRoutes = new NotificationsRoutes();
 
   constructor(app: Application) {
     app.use(errorHandler);
@@ -19,7 +21,8 @@ export default class Routes {
     this.homeRoutes.routes(app);
     this.appointmentsRoutes.routes(app);
     this.authRoutes.routes(app);
-    this.notificationRoutes.routes(app);
+    this.postRoutes.routes(app);
+    // this.notificationRoutes.routes(app);
 
     app.all('*', () => {
       throw new AppError(404, 'Route not found');

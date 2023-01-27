@@ -1,8 +1,8 @@
-import { Role } from '.prisma/client';
+// import { Role } from '.prisma/client';
 import { Request, Response, NextFunction } from 'express';
 
 import AppError from '../errors';
-import IJwtPayload from '../interfaces/jwtPayloadInterface';
+import {IJwtPayload} from '../interfaces/jwtPayloadInterface';
 import getPayload from '../utils/jwtPayload';
 
 // export const authorize = (roles: string[] = []) => {
@@ -36,17 +36,17 @@ import getPayload from '../utils/jwtPayload';
 //   ];
 // };
 
-export default (role: Role) => async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    var payload: IJwtPayload = getPayload(req);
+// export default (role: Role) => async (req: Request, res: Response, next: NextFunction) => {
+//   try {
+//     var payload: IJwtPayload = getPayload(req);
 
-    var userRole = payload.role;
+//     var userRole = payload.role;
 
-    if (!userRole) userRole = Role.PATIENT;
+//     if (!userRole) userRole = Role.PATIENT;
 
-    if (userRole === role) return next();
-    throw new AppError(403, 'You do not have the authorization to access this');
-  } catch (err) {
-    next(err);
-  }
-};
+//     if (userRole === role) return next();
+//     throw new AppError(403, 'You do not have the authorization to access this');
+//   } catch (err) {
+//     next(err);
+//   }
+// };

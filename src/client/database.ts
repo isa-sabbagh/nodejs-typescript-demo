@@ -9,25 +9,51 @@ const connect = async function connect() {
 
     // await prisma.user.create({
     //   data: {
-    //     firstName: 'Rich',
-    //     lastName: 'sabbagh',
-    //     email: 'hello@prisma.com',
-    //     token: '',
+    //     email: 'demo@prisma.io',
+    //     firstName: 'isa',
+    //     lastName: 'abb',
+    //     token: '2323223232323',
+    //     ip:'121212121',
+    //     deviceId:'121212121',
+    //     deviceInfo:'121212121',
+    //     posts: {
+    //       create: { title: 'Hello World' },
+    //     },
     //     profile: {
-    //       create: {
-    //         avatar: 'https://picsum.photos/200',
-    //         bio: 'Lots of really interesting stuff',
-    //         phone: 'my-first-post',
-    //       },
+    //       create: { bio: 'I like turtles' },
     //     },
     //   },
-    // });
-
+    // })
+  
     // const allUsers = await prisma.user.findMany({
     //   include: {
+    //     posts: true,
     //     profile: true,
     //   },
-    // });
+    // })
+    // console.dir(allUsers, { depth: null })
+
+ /*    await prisma.user.create({
+      data: {
+        firstName: 'test',
+        lastName: 'sabbagh',
+        email: 'hello@prisma.com',
+        token: '',
+        profile: {
+          create: {
+            avatar: 'https://picsum.photos/200',
+            bio: 'Lots of really interesting stuff',
+            phone: 'my-first-post',
+          },
+        },
+      },
+    });
+
+    const allUsers = await prisma.user.findMany({
+      include: {
+        profile: true,
+      },
+    }); */
 
     // const allUsers = await prisma.user.findMany({});
 
